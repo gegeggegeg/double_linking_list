@@ -34,7 +34,7 @@ int main()
 				break;
 			case 3:
 				cout << "Please enter offset: ";
-				cin >> offset;
+				cin>>offset;
 				node = node->move_forward(offset);
 				show(node);
 				break;
@@ -61,8 +61,8 @@ int main()
 				cout <<"show\nprintlist\nforward\nbackward\ndelete\ninsert\n";
 				break;
 			default:
-				cout<< "Please enter a valid command"<<endl;
-				break;
+				getline(cin, input);
+				continue;
 		}
 		cout << "Please enter your action: ";
 		getline(cin, input);	
