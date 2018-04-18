@@ -39,12 +39,14 @@ linknode* linknode::insert_node(int node){
 
 linknode* linknode::delete_node(){
 	(this->prevnode)->nextnode = this->nextnode;
+	(this->nextnode)->prevnode = this->prevnode;
 	linknode *current = this->nextnode;
 	linknode *temp = this->nextnode;
 	while(temp != NULL){
 		temp->pos = temp->pos - 1;
 		temp = temp->nextnode;
 	}
+	delete this;
 	return current;
 }
 
